@@ -462,7 +462,7 @@ public class FightSettingsUserControlModel : TaskSettingsViewModel
         "30165", // 重相位对映体
     ];
 
-    public void InitDrops()
+    private void InitDrops()
     {
         AllDrops.Add(new() { Display = LocalizationHelper.GetString("NotSelected"), Value = string.Empty });
         foreach (var (val, value) in ItemListHelper.ArkItems)
@@ -704,10 +704,12 @@ public class FightSettingsUserControlModel : TaskSettingsViewModel
     {
         if (baseTask is FightTask)
         {
+            InitDrops();
             Refresh();
         }
     }
 
+    [Obsolete]
     public override (AsstTaskType Type, JObject Params) Serialize()
     {
         var task = new AsstFightTask()
