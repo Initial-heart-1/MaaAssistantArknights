@@ -712,7 +712,6 @@ namespace MaaWpfGui.ViewModels.UI
 
             NeedToUpdateDatePrompt();
             UpdateDatePromptAndStagesLocally();
-            InfrastTask.RefreshCustomInfrastPlan();
         }
 
         public DayOfWeek CurDayOfWeek { get; private set; }
@@ -1442,8 +1441,6 @@ namespace MaaWpfGui.ViewModels.UI
                 SetStopped();
             }
         }
-
-        public bool EnableSetFightParams { get; set; } = true;
 
         /// <summary>
         /// Sets parameters.
